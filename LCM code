@@ -1,0 +1,41 @@
+import java.util.Scanner;
+public class COL106 {
+	public static int GCD;
+	public int LCM(int a,int b) {
+		int x=a;
+		int y=b;
+		int t;
+		if (a>b) {
+			while(b!=0) {
+				t=b;
+				b=a%b;
+				a=t;
+			}
+			GCD=a;
+		}
+		else {
+			while(a!=0) {
+				t=a;
+				a=b%a;
+				b=t;
+			}
+			GCD=b;
+		}
+		return (x*y)/GCD;
+	}
+	public static void main(String[] args) {
+		COL106 abc = new COL106();
+		Scanner s= new Scanner(System.in);
+		System.out.print("enter number 1:- ");
+		int a1=s.nextInt();
+		Scanner z= new Scanner(System.in);
+		System.out.print("enter number 2:- ");
+		int a2=z.nextInt();
+		System.out.println("LCM of "+a1+" and "+a2+" is "+abc.LCM(a1,a2)+" and GCD is "+GCD);
+	}
+}
+
+OUTPUT:-
+enter number 1:- 4
+enter number 2:- 6
+LCM of 4 and 6 is 12 and GCD is 2
